@@ -20,7 +20,7 @@ function solveNQueens($n) {
         $col[$c] = true;
         $posDiag[$r + $c] = true;
         $negDiag[$r - $c] = true;
-        $board[$r][$c] = "Q";
+        $board[$r][$c] = 'Q';
     };
 
     $removeQueen = function($r, $c) use (&$col, &$posDiag, &$negDiag, &$board) {
@@ -58,14 +58,31 @@ function solveNQueens($n) {
     return $res;
 }
 
-// Imprimir la respuesta en pantalla
-$n = 8; // Cambiar el valor de "n" según sea necesario
-$solutions = solveNQueens($n);
-echo "Soluciones para $n reinas:<br>";
-foreach ($solutions as $index => $solution) {
-    echo "Solución " . ($index + 1) . ":<br>";
-    foreach ($solution as $row) {
-        echo $row . "<br>";
-    }
+$n = $_POST['n'];
+
+if ($n < 1 || $n > 92) {
+    echo 'Número inválido. Por favor, ingrese un número del 1 al 92.';
+    exit;
 }
+
+$solutions = solveNQueens(8);
+
+if ($n > count($solutions)) {
+    echo 'No hay solución para el número ingresado.';
+    exit;
+}
+
+$solution = $solutions[$n - 1];
+foreach ($solution as $row) {
+    echo '<div class="solution-row">';
+    for ($i = 0; $i < strlen($row); $i++) {
+        if ($row[$i] === 'Q') {
+            echo '<span class="queen">' . $row[$i] . '</span>';
+        } else {
+            echo '<span class="dot">' . $row[$i] . '</span>';
+        }
+    }
+    echo '</div>';
+}
+
 ?>

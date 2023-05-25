@@ -1,0 +1,15 @@
+.solution-row {
+    font-family: monospace;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+}
+.solution-row .queen {
+    color: #ff0000; /* Color de las reinas (rojo) */
+    font-weight: bold;
+    padding: 0 2rem;
+}
+.solution-row .dot {
+    padding: 0 2rem;
+    color: #000000; /* Color de los puntos (negro) */
+}
+
