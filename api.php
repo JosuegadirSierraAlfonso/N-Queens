@@ -1,12 +1,10 @@
 <?php
-
 function solveNQueens($n) {
     if ($n === 1) return [["Q"]];
 
     $col = [];
     $posDiag = [];
     $negDiag = [];
-
     $res = [];
     $board = array_fill(0, $n, array_fill(0, $n, " "));
 
@@ -28,11 +26,9 @@ function solveNQueens($n) {
         unset($posDiag[$r + $c]);
         unset($negDiag[$r - $c]);
         $board[$r][$c] = " ";
-        
     };
 
     // Recursive backtracking function
-
     $recurse = function($row) use ($n, &$res, &$board, $isValid, $addQueen, $removeQueen, &$recurse) {
         // Base case
         if ($row === $n) {
@@ -60,21 +56,12 @@ function solveNQueens($n) {
 
 $n = $_POST['n'];
 
-if ($n < 1 || $n > 92) {
-    echo 'Número inválido. Por favor, ingrese un número del 1 al 92.';
-    exit;
-}
-
 $solutions = solveNQueens(8);
-
-if ($n > count($solutions)) {
-    echo 'No hay solución para el número ingresado.';
-    exit;
-}
-
 $solution = $solutions[$n - 1];
+$alternateClass = 'black'; // Variable de control para alternar las clases
+
 foreach ($solution as $row) {
-    echo '<div class="solution-row">';
+    echo '<div class="solution-row '.$alternateClass.'">'; // Agregar la clase correspondiente a la fila
     for ($i = 0; $i < strlen($row); $i++) {
         if ($row[$i] === 'Q') {
             echo '<span class="queen">'.$row[$i].'</span>';
@@ -83,8 +70,8 @@ foreach ($solution as $row) {
         }
     }
     echo '</div>';
+    
+    // Alternar la clase en cada fila
+    $alternateClass = ($alternateClass === 'black') ? 'white' : 'black';
 }
-
-
-
 ?>

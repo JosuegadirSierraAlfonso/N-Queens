@@ -1,33 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+
+
 body{
-    margin-bottom: 3%;
+    margin-bottom: 1%;
+    background-image: url(./bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2 {
+    color: aliceblue;
+    font-family: 'Orbitron', sans-serif;
+}
+
+h2{
+    margin-bottom: 1rem !important;
 }
 
 .solution-row {
     font-family: monospace;
-    font-size: 2rem;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
 
 }
-.solution-row .queen {
-    background-image: url(./black-chess-queen.png);
+.solution-row > .queen {
+    background-image: url(./queen.png);
     color: transparent;
     background-position: center;
     background-size: cover;
-    padding: 1rem 1.395rem;
-    border: solid 2px black;
+    width: 4.2rem;
 }
-.solution-row .dot {
-    
-    border: solid 2px black;
-    padding: 1rem 2rem;
-    
+
+.dot{
+    padding: 2rem !important;
 }
+
+/* Agregar estilos para el tablero de ajedrez */
+.solution-row:nth-child(2n) .dot:nth-child(2n) {
+    background-color: rgb(0, 16, 31);
+    border: solid 2px black;
+
+}
+
+.solution-row:nth-child(2n) .dot:nth-child(2n+1) {
+    border: solid 2px rgb(255, 255, 255);
+    background-color: rgb(234, 255, 255);
+}
+
+.solution-row:nth-child(2n+1) .dot:nth-child(2n) {
+    border: solid 2px rgb(255, 255, 255);
+    background-color: rgb(234, 255, 255);
+
+
+}
+
+.solution-row:nth-child(2n+1) .dot:nth-child(2n+1) {
+    background-color: rgb(0, 16, 31);
+    border: solid 2px black;
+
+
+}
+
+
+
 
 @media (max-width: 560px) {
     .solution-row .queen {
-        background-image: url(./black-chess-queen.png);
+        background-image: url(./star.svg);
         color: transparent;
         background-position: center;
         background-size: cover;
