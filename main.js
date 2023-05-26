@@ -1,6 +1,9 @@
 tablero = document.querySelector('#nQueensForm');
 tablero.addEventListener('submit', function(e) {
     e.preventDefault();
+    document.querySelector(".father").style.display = 'block';
+
+
 
     let n = document.querySelector('#nValue').value;
 

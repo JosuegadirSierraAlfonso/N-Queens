@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-
+*{
+    margin: 0;
+    padding: 0;
+}
 
 body{
-    margin-bottom: 1%;
+    margin-bottom: 1rem;
     background-image: url(./bg.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -18,12 +21,9 @@ h2{
 }
 
 .solution-row {
-    font-family: monospace;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-
 }
+
 .solution-row > .queen {
     background-image: url(./queen.png);
     color: transparent;
@@ -62,23 +62,59 @@ h2{
 
 }
 
-
-
-
-@media (max-width: 560px) {
-    .solution-row .queen {
-        background-image: url(./star.svg);
-        color: transparent;
-        background-position: center;
-        background-size: cover;
-        padding: .0rem .7rem;
-        border: solid 2px black;
-    }
-    .solution-row .dot {
-        
-        border: solid 2px black;
-        padding: .2rem 1.3rem;
-    }    
+#title{
+    width: 40rem;
+    padding: 0 auto;
+    margin: 0 auto;
     
+}
 
+.father{
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+#solutionOutput{
+    background-color: #130013b0;
+    max-width: 36rem !important;
+    border-radius: 0.3rem !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+#main{
+    justify-content: space-evenly;
+}
+
+@media (max-width : 820px)  {
+    #title{
+        width: 20rem;
+    }
+
+ .container{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .dot{
+    padding: 1rem !important;
+}
+.solution-row > .queen {
+    background-image: url(./queen.png);
+    color: transparent;
+    background-position: center;
+    background-size: cover;
+    width: 2.3rem !important;
+    border: solid 2px gold;
+}
+
+
+#solutionOutput{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 }
