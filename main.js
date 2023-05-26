@@ -20,3 +20,9 @@ tablero.addEventListener('submit', function(e) {
     };
     xhr.send('n=' + n);
 });
+
+allTableros = document.querySelector("#allSolutions");
+allTableros.addEventListener("click", (e)=>{
+    e.preventDefault();
+    
+})

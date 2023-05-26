@@ -8,7 +8,7 @@ function solveNQueens($n) {
     $negDiag = [];
 
     $res = [];
-    $board = array_fill(0, $n, array_fill(0, $n, "."));
+    $board = array_fill(0, $n, array_fill(0, $n, " "));
 
     // Helper functions
 
@@ -27,7 +27,7 @@ function solveNQueens($n) {
         unset($col[$c]);
         unset($posDiag[$r + $c]);
         unset($negDiag[$r - $c]);
-        $board[$r][$c] = ".";
+        $board[$r][$c] = " ";
         
     };
 
@@ -77,12 +77,14 @@ foreach ($solution as $row) {
     echo '<div class="solution-row">';
     for ($i = 0; $i < strlen($row); $i++) {
         if ($row[$i] === 'Q') {
-            echo '<span class="queen">' . $row[$i] . '</span>';
+            echo '<span class="queen">'.$row[$i].'</span>';
         } else {
-            echo '<span class="dot">' . $row[$i] . '</span>';
+            echo '<span class="dot">'.$row[$i].'</span>';
         }
     }
     echo '</div>';
 }
+
+
 
 ?>

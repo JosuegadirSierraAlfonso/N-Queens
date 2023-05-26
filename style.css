@@ -1,15 +1,44 @@
+body{
+    margin-bottom: 3%;
+}
+
 .solution-row {
     font-family: monospace;
     font-size: 2rem;
-    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
 }
 .solution-row .queen {
-    color: #ff0000; /* Color de las reinas (rojo) */
-    font-weight: bold;
-    padding: 0 2rem;
+    background-image: url(./black-chess-queen.png);
+    color: transparent;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem 1.395rem;
+    border: solid 2px black;
 }
 .solution-row .dot {
-    padding: 0 2rem;
-    color: #000000; /* Color de los puntos (negro) */
+    
+    border: solid 2px black;
+    padding: 1rem 2rem;
+    
 }
 
+@media (max-width: 560px) {
+    .solution-row .queen {
+        background-image: url(./black-chess-queen.png);
+        color: transparent;
+        background-position: center;
+        background-size: cover;
+        padding: .0rem .7rem;
+        border: solid 2px black;
+    }
+    .solution-row .dot {
+        
+        border: solid 2px black;
+        padding: .2rem 1.3rem;
+    }    
+    
+
+}
